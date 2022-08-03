@@ -7,13 +7,23 @@ import Navbar from './components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />  
-      <div className='content'>
-        <Main />
-      </div>
-      <Footer /> 
-    </div>
+    <table className="App">
+      <tr>
+        <td id='header'>
+          <Navbar />  
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <Main />
+        </td>
+      </tr>
+      <tr>
+        <td id='footer'>
+          <Footer />
+        </td>
+      </tr>
+    </table>
   );
 }
 

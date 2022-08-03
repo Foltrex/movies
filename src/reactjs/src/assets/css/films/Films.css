@@ -1,0 +1,27 @@
+.films-background {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, white 100%),
+    url('../../images/films/once-upon-a-time-in-hollywood.jpeg');
+    background-size: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -20;
+}
+
+.films-container {
+    margin-top: 10vh;
+}
+
+.films {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 2vw;
+}
+
+.films-title {
+    text-align: start;
+    padding-top: 3vh;
+    padding-left: 2vw;
+}

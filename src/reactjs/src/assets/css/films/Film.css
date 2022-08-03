@@ -1,0 +1,8 @@
+.film-card {
+    margin: 2vw;
+}
+
+.film-card a {
+    text-decoration: none;
+    color: black;
+}

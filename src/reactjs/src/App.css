@@ -1,13 +1,10 @@
 .App {
   text-align: center;
+  min-height: 100vh;
 }
 
-.content {
-  padding-top: 55vh;
-  padding-bottom: 25vh;
-  background-image: linear-gradient(to bottom, blue 6%, white 30%);
-
-}
+#header { padding-bottom: 45vh; padding-top: 3vh; }
+#footer { padding-top: 20vh; }
 
 .App-logo {
   height: 40vmin;

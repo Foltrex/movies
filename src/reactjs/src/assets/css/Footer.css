@@ -1,0 +1,8 @@
+#footer {
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height:8vh;
+  align-items: center;
+  z-index: 1000;
+}

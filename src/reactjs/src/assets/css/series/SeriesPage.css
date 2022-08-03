@@ -1,0 +1,27 @@
+.series-background {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, white 100%),
+    url('../../images/series/boys.webp');
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -20;
+}
+
+.series-container {
+    margin-top: 10vh;
+}
+
+.series {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 2vw;
+}
+
+.series-title {
+    text-align: start;
+    padding-top: 3vh;
+    padding-left: 2vw;
+}

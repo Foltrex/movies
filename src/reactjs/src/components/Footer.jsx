@@ -1,8 +1,10 @@
 import React from 'react';
 
+import '../assets/css/Footer.css';
+
 const Footer = () => {
     return (
-        <div className='border fixed-bottom py-3 bg-white' style={{height:'7vh'}}>
+        <div id='footer' className='shadow py-2 bg-white'>
             © Movies. Все права защищены.
         </div>
     );

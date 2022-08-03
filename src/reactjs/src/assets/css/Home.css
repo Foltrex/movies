@@ -1,0 +1,29 @@
+.gradient-background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -20;
+  background-image: linear-gradient(to bottom, #084a90 20%, white 82%);
+}
+
+.content-list {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.content-card {
+    white-space: normal;
+    display: inline-block;
+}
+
+.card-title {
+    text-decoration:none;
+    font-size:1em;
+}
+
+.sectionTitle {
+    text-align:left;
+}
