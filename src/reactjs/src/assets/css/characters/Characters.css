@@ -1,0 +1,22 @@
+.characters-background {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 20%, white 100%),
+    url('../../images/characters/characters.jpeg');
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -20;
+}
+
+.alphabet-pagination {
+    padding-top: 3vh;
+    margin-left: 2vw;
+}
+
+.letter a {
+    margin: auto 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+}

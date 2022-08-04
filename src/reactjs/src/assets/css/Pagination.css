@@ -1,0 +1,11 @@
+.content-pagination {
+    justify-content: center;
+    padding-bottom: 4vh;
+    margin-bottom: 0;
+}
+
+.page-item a {
+    font-size: 1.4em;
+    width: 45px;
+    height: 45px;
+}

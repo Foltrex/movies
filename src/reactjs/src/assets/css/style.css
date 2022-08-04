@@ -1,0 +1,15 @@
+.container {
+    margin-top: 10vh;
+}
+
+.movies {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 2vw;
+}
+
+.title {
+    text-align: start;
+    padding-top: 3vh;
+    padding-left: 2vw;
+}

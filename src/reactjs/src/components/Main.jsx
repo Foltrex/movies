@@ -6,6 +6,8 @@ import Home from './Home';
 import Films from './films/Films';
 import NoPage from './NoPage';
 import SeriesPage from './series/SeriesPage';
+import Cartoons from './cartoons/Cartoons';
+import Characters from './characters/Characters';
 
 const Main = () => {
     return (
@@ -14,6 +16,8 @@ const Main = () => {
             <Route exact path='/' element={<Home />} />
             <Route path='/series' element={<SeriesPage />} />
             <Route path='/films' element={<Films />} />
+            <Route path='/cartoons' element={<Cartoons />} />
+            <Route path='/characters' element={<Characters /> } />
             <Route path='*' element={<NoPage />} />
           </Routes>
         </div>

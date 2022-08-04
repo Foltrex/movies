@@ -2,7 +2,9 @@ import React from 'react';
 
 import Series from './Series';
 
-import '../../assets/css/series/SeriesPage.css';
+import '../../assets/css/series/Series.css';
+import '../../assets/css/style.css';
+import Pagination from '../Pagination';
 
 const SeriesPage = () => {
     const series = [
@@ -16,11 +18,12 @@ const SeriesPage = () => {
     return (
         <div>
           <canvas className='series-background' />
-          <div className='series-container container shadow bg-white'>
-            <h2 className='series-title'>Series</h2>
-            <div className='series'>
+          <div className='container shadow bg-white'>
+            <h2 className='title'>Series</h2>
+            <div className='movies'>
               {series}
             </div>
+            <Pagination />
           </div>
         </div>
     );

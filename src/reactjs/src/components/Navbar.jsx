@@ -20,14 +20,14 @@ const Navbar = () => {
                 </li>
                 <li className='nav-item'>
                     <Link to='' className='nav-link'>
-                        <span className='logo-text'>Movies</span>
+                        <span className='logo-text'>Multimedia</span>
                     </Link>
                 </li>
                 <li className='nav-item'>
                     <Link to='cartoons' className='nav-link'>Cartoons</Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to='wiki' className='nav-link'>Wiki</Link>
+                    <Link to='characters' className='nav-link'>Characters</Link>
                 </li>
             </ul>
 

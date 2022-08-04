@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from 'react-bootstrap/Card';
 
-import '../../assets/css/films/Film.css';
+import '../../assets/css/Card.css';
 
 import defaultImage from '../../assets/images/defaultImage.png';
 
@@ -11,7 +11,7 @@ const Film = props => {
 
     return (
         <div>
-          <Card className='film-card content-card border-0'>
+          <Card className='content-card border-0'>
             <a href='#'>
               <Card.Img src={imageSrc || defaultImage} alt='Film'/>
               <Card.Body>
