@@ -1,4 +1,4 @@
-package com.cinema.movies.config;
+package com.cinema.movies.utils;
 
 import com.cinema.movies.domain.*;
 import lombok.extern.slf4j.Slf4j;
@@ -11,28 +11,19 @@ import org.hibernate.cfg.Configuration;
 import java.util.Map;
 
 @Slf4j
-public class HibernateSessionFactoryConfig {
-    private static HibernateSessionFactoryConfig hibernateSessionFactory;
+public class HibernateSessionFactoryUtil {
+    private static SessionFactory sessionFactory;
 
-    private SessionFactory sessionFactory;
-
-
-    public static HibernateSessionFactoryConfig getInstance() {
-        if (hibernateSessionFactory == null) {
-            hibernateSessionFactory = new HibernateSessionFactoryConfig();
-        }
-        return hibernateSessionFactory;
-    }
-
-    public SessionFactory getSessionFactory() {
+    public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration().configure();
+                configuration.addAnnotatedClass(AbstractEntity.class);
                 configuration.addAnnotatedClass(com.cinema.movies.domain.Character.class);
                 configuration.addAnnotatedClass(Country.class);
                 configuration.addAnnotatedClass(Genre.class);
-                configuration.addAnnotatedClass(Movie.class);
                 configuration.addAnnotatedClass(Multimedia.class);
+                configuration.addAnnotatedClass(Movie.class);
                 configuration.addAnnotatedClass(Producer.class);
                 configuration.addAnnotatedClass(Series.class);
 

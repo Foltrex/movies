@@ -4,41 +4,24 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
+
+import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
 @Table(name = "genre")
 @Getter
-public class Genre implements Identifiable {
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private Long id;
+public class Genre extends AbstractEntity {
+
 	private String name;
 
 	@ManyToMany(fetch = FetchType.LAZY, mappedBy = "genres")
 	private Set<Multimedia> multimedia = new HashSet<>();
 
 	@Override
-	public boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (!(o instanceof Genre genre)) {
-			return false;
-		}
-		return id != null && id.equals(genre.getId());
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
-	@Override
 	public String toString() {
 		return "Genre{" +
-				"id=" + id +
+				super.toString() +
 				", name='" + name + '\'' +
 				'}';
 	}

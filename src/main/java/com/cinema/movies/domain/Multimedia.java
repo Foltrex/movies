@@ -4,18 +4,15 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.Objects;
 import java.util.Set;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
+@Getter
 @Entity
 @Table(name = "multimedia")
-@Getter
-public abstract class Multimedia implements Identifiable {
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Setter(AccessLevel.NONE)
-	private Long id;
-
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract class Multimedia extends AbstractEntity {
     private String name;
 
     @Column(name = "image_path")
@@ -43,26 +40,10 @@ public abstract class Multimedia implements Identifiable {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "multimedia")
     private Set<Character> characters = new HashSet<>();
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof Multimedia that)) {
-            return false;
-        }
-
-        return id != null && id.equals(that.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(id);
-    }
 
     @Override
     public String toString() {
-        return "id=" + id +
+        return "id=" + super.toString() +
                 ", name='" + name + '\'' +
                 ", imagePath='" + imagePath + '\'';
     }

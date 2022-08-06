@@ -4,16 +4,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
+import static javax.persistence.GenerationType.SEQUENCE;
+
 @Entity
 @Table(name = "series")
+@PrimaryKeyJoinColumn(name = "multimedia_id")
 @Getter
-public class Series extends Multimedia implements Identifiable {
+public class Series extends Multimedia {
 	@Column(name = "seasons_amount")
 	private int seasonsAmount;
 	@Column(name = "series_amount")

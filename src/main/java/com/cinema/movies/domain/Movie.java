@@ -1,19 +1,26 @@
 package com.cinema.movies.domain;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.Getter;
+
+import java.util.Arrays;
 import java.util.Date;
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Data
-@EqualsAndHashCode(callSuper = true)
+import static javax.persistence.GenerationType.SEQUENCE;
+
 @Entity
 @Table(name = "movie")
-public class Movie extends Multimedia implements Identifiable {
+@PrimaryKeyJoinColumn(name = "multimedia_id")
+@Getter
+public class Movie extends Multimedia {
 	@Column(name = "release_date")
 	private Date releaseDate;
 	private Type type;
@@ -25,18 +32,25 @@ public class Movie extends Multimedia implements Identifiable {
 
 		private final String typeName;
 
+		private static final Map<String, Type> ELEMENTS = new HashMap<>(
+				Arrays.stream(Type.values())
+						.collect(Collectors.toMap(Type::getTypeName, x -> x))
+		);
+
 		Type(String typeName) {
 			this.typeName = typeName;
 		}
 
-		public Type valueOfTypeName(String typeName) {
-			return Type.valueOf(typeName.toUpperCase());
+		@JsonCreator
+		public static Type valueOfTypeName(String typeName) {
+			return ELEMENTS.get(typeName);
 		}
 
 		public String getTypeName() {
 			return typeName;
 		}
 	}
+
 
 	@Override
 	public String toString() {

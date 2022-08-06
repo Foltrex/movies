@@ -1,24 +1,16 @@
 package com.cinema.movies.domain;
 
-import lombok.AccessLevel;
-import lombok.Data;
 import lombok.Getter;
-import lombok.Setter;
 
 import javax.persistence.*;
 
-import java.util.Objects;
-
-import static javax.persistence.GenerationType.*;
-
+import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
 @Table(name = "character")
 @Getter
-public class Character implements Identifiable {
-	@Id
-	@GeneratedValue(strategy = SEQUENCE)
-	private Long id;
+public class Character extends AbstractEntity {
+
 	private String name;
 	private String surname;
 	@Column(name = "image_path")
@@ -30,25 +22,9 @@ public class Character implements Identifiable {
 	private Multimedia multimedia;
 
 	@Override
-	public boolean equals(Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (!(o instanceof Character character)) {
-			return false;
-		}
-		return id != null && id.equals(character.getId());
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
-
-	@Override
 	public String toString() {
 		return "Character{" +
-				"id=" + id +
+				super.toString() +
 				", name='" + name + '\'' +
 				", surname='" + surname + '\'' +
 				", imagePath='" + imagePath + '\'' +
